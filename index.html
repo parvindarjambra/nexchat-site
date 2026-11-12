@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NexChat</title>
+<meta name="theme-color" content="#0b2a5b">
+<style>
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;margin:0;color:#0f2040;background:#e0eaff;min-height:100vh;text-align:center}
+header{background:linear-gradient(135deg,#081a3d,#0b2a5b 40%,#2563eb 80%,#38bdf8);color:#fff;padding:52px 20px 64px;position:relative;overflow:hidden}
+header:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.12);top:-120px;right:-60px}
+header:after{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.10);bottom:-100px;left:-40px}
+header img{width:120px;height:120px;border-radius:30px;box-shadow:0 14px 34px rgba(0,0,0,.4);background:#fff;padding:8px;position:relative}
+header h1{margin:16px 0 4px;font-size:48px;letter-spacing:.5px;position:relative}
+header p{margin:0;opacity:.95;font-size:18px;position:relative}
+.card{max-width:600px;margin:-32px auto 0;background:#fff;border-radius:24px;border-top:6px solid #2563eb;box-shadow:0 20px 50px rgba(11,42,91,.22);padding:34px 26px 30px;position:relative}
+.qr-title{font-size:21px;font-weight:900;background:linear-gradient(90deg,#0b2a5b,#2563eb);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0 0 18px}
+.qr-box{display:inline-block;background:#fff;border:2px solid #bfdbfe;border-radius:20px;padding:18px;box-shadow:0 12px 30px rgba(37,99,235,.18)}
+.qr-box img{display:block;border-radius:8px}
+.btn,.btn2{display:block;width:100%;max-width:440px;margin:16px auto 0;padding:17px 20px;border-radius:16px;font-weight:800;font-size:18px;text-decoration:none;cursor:pointer;border:0;transition:transform .15s,box-shadow .15s}
+.btn2{background:linear-gradient(135deg,#2563eb,#38bdf8);color:#fff;box-shadow:0 12px 26px rgba(37,99,235,.4)}
+.btn{background:linear-gradient(135deg,#0b2a5b,#1e3a8a);color:#fff;box-shadow:0 12px 26px rgba(11,42,91,.35)}
+.btn:hover,.btn2:hover{transform:translateY(-2px)}
+.note{max-width:520px;margin:16px auto 0;background:#eff6ff;border:1px solid #bfdbfe;padding:14px 18px;border-radius:12px;color:#334155;font-size:14px;line-height:1.6}
+details{max-width:520px;margin:18px auto 0;text-align:left}
+.how{display:block;background:linear-gradient(135deg,#eef3ff,#dbeafe);color:#0b2a5b;padding:15px 18px;border-radius:12px;font-weight:800;font-size:16px;cursor:pointer;list-style:none;border:1px solid #bfdbfe}
+.how::-webkit-details-marker{display:none}
+#howBox{background:#f7f9ff;padding:18px;border-radius:0 0 12px 12px;border:1px solid #dbe4ff;border-top:0}
+#howBox ol{margin:0;padding-left:20px}
+#howBox li{margin:8px 0;line-height:1.5}
+.promo{margin-top:20px;background:linear-gradient(135deg,#0b2a5b,#2563eb);color:#fff;border-radius:16px;padding:20px 18px;box-shadow:0 12px 26px rgba(37,99,235,.35)}
+.promo b{display:block;font-size:20px}
+.promo p{margin:8px 0 14px;opacity:.95;font-size:15px;line-height:1.5}
+.promo a{display:inline-block;background:#fff;color:#0b2a5b;padding:12px 26px;border-radius:12px;font-weight:800;text-decoration:none;font-size:16px}
+main{padding:0 16px 36px}
+</style>
+</head>
+<body>
+<header>
+<img src="logo.png" alt="NexChat logo">
+<h1>NexChat</h1>
+<p>Chat Like WhatsApp, Without Internet.</p>
+</header>
+<main>
+<div class="card">
+<p class="qr-title">Scan and Download App in Your Device</p>
+<div class="qr-box"><img src="nexchat-download-qr.png" alt="Scan to open NexChat" width="240" height="240"></div>
+<p><a class="btn" href="/app-debug.apk">⬇ Download Asli App (APK File)</a></p>
+<div class="note">APK file download hogi — download ke baad us file par tap karke Install dabao (Unknown sources allow karna par sakta hai). Browser seedha APK install nahi kar sakta, Play Store ke baghair yehi tareeqa hai. Laptop par sirf file download hogi.</div>
+<details>
+<summary class="how">How to Use ▶</summary>
+<div id="howBox">
+<ol>
+<li>APK download karke Install dabao, phir home screen se NexChat app kholo (browser/website shortcut se nahi).</li>
+<li>SMS Chat kholo, friend ka naam + number likho, Contact save karo.</li>
+<li>Naye contact par pehle Rs 200 payment: EasyPaisa account par bhejo, TRX ID likho, Pay dabao — message auto chala jayega.</li>
+<li>Doosri taraf ka jawab FREE hai. Group banane par bhi sirf Rs 200, members FREE.</li>
+<li>Paas mein ho to nearby chat bhi chalegi, bina internet ke.</li>
+</ol>
+</div>
+</details>
+<div class="promo" id="crossPromo">
+<b>📥 EasySave — HD Video Downloader</b>
+<p>YouTube, TikTok, Instagram, Facebook — 1080p video bina watermark ke download karo.</p>
+<a href="https://easysavehd.vercel.app/">Open EasySave App →</a>
+</div>
+</div>
+</main>
+<script>
+// Cross-promo ad cycle: banner dikhe, phir chhup jaye, phir dobara aaye (loop)
+(function(){
+  var p = document.getElementById('crossPromo');
+  if (!p) return;
+  setInterval(function(){
+    p.style.display = (p.style.display === 'none') ? '' : 'none';
+  }, 6000);
+})();
+</script>
+</body>
+</html>
